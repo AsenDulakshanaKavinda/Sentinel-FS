@@ -1,0 +1,25 @@
+[project]
+name = "file-sys-tools"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "AsenDulakshanaKavinda", email = "s22010362@ousl.lk" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+file-sys-tools = "file_sys_tools:main"
+
+[tool.maturin]
+module-name = "file_sys_tools._core"
+python-packages = ["file_sys_tools"]
+python-source = "src"
+
+[tool.uv]
+cache-keys = [{ file = "pyproject.toml" }, { file = "src/**/*.rs" }, { file = "Cargo.toml" }, { file = "Cargo.lock" }]
+
+[build-system]
+requires = ["maturin>=1.0,<2.0"]
+build-backend = "maturin"
